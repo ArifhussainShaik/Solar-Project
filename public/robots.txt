@@ -1,0 +1,34 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow system and development files
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /tsconfig.json
+Disallow: /next.config.mjs
+Disallow: /postcss.config.mjs
+Disallow: /tailwind.config.ts
+
+# Disallow API and private routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /_vercel/
+Disallow: /_error
+Disallow: /404
+Disallow: /500
+
+# Allow main content pages
+Allow: /about/
+Allow: /services/
+Allow: /projects/
+Allow: /contact/
+Allow: /locations/
+Allow: /blog/
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10 
