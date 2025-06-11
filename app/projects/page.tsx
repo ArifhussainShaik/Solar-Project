@@ -137,7 +137,7 @@ export default function ProjectsPage() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle>7kW Off-Grid Home System</CardTitle>
+                    <CardTitle>7kW On-Grid Home System</CardTitle>
                     <CardDescription className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" /> Kurnool District, Andhra Pradesh
                     </CardDescription>
@@ -148,7 +148,7 @@ export default function ProjectsPage() {
                       <span>Completed: April 2025</span>
                     </div>
                     <p className="text-gray-500">
-                      This is on 7kW Off-Grid Home System on project Section
+                      A 7kW grid-connected solar system for a residential home, providing reliable power supply and reducing electricity bills.
                     </p>
                   </CardContent>
                 </Card>
@@ -253,7 +253,7 @@ export default function ProjectsPage() {
                     />
                   </div>
                   <CardHeader>
-                    <CardTitle>7kW Off-Grid Home System</CardTitle>
+                    <CardTitle>7kW On-Grid Home System</CardTitle>
                     <CardDescription className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" /> Kurnool District, Andhra Pradesh
                     </CardDescription>
@@ -261,10 +261,10 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: January 2025</span>
+                      <span>Completed: April 2025</span>
                     </div>
                     <p className="text-gray-500">
-                      This is on 7kW Off-Grid Home System on project Section
+                      A 7kW grid-connected solar system for a residential home, providing reliable power supply and reducing electricity bills.
                     </p>
                   </CardContent>
                 </Card>
