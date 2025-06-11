@@ -11,7 +11,10 @@ export default function SiteFooter() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Sun className="h-6 w-6 text-yellow-500" />
-              <span className="text-xl font-bold">Kohinoor Enterprises</span>
+              <span className="text-xl font-bold flex flex-col">
+                Kohinoor Enterprises
+                <span className="text-sm font-normal">(Solar Hub)</span>
+              </span>
             </div>
             <p className="text-gray-300">
               Providing sustainable solar energy solutions for homes and businesses across Andhra Pradesh since 1979.

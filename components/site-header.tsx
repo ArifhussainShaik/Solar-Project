@@ -26,8 +26,9 @@ export default function SiteHeader() {
                 className="h-10 w-auto rounded-sm shadow-sm" 
                 priority
               />
-              <span className="ml-2 text-lg font-semibold text-gray-900">
+              <span className="ml-2 text-lg font-semibold text-gray-900 flex flex-col">
                 Kohinoor Enterprises
+                <span className="text-xs font-normal">(Solar Hub)</span>
               </span>
             </div>
             {/* Mobile Logo - Larger for better visibility */}
@@ -40,8 +41,9 @@ export default function SiteHeader() {
                 className="h-9 w-auto rounded-sm shadow-sm" 
                 priority
               />
-              <span className="ml-2 text-base font-semibold text-gray-900">
+              <span className="ml-2 text-base font-semibold text-gray-900 flex flex-col">
                 Kohinoor Enterprises
+                <span className="text-xs font-normal">(Solar Hub)</span>
               </span>
             </div>
           </Link>
@@ -82,8 +84,9 @@ export default function SiteHeader() {
                   className="h-8 w-auto rounded-sm shadow-sm" 
                   priority
                 />
-                <span className="text-base font-semibold text-gray-900">
+                <span className="text-base font-semibold text-gray-900 flex flex-col">
                   Kohinoor Solar
+                  <span className="text-xs font-normal">(Solar Hub)</span>
                 </span>
               </SheetTitle>
             </SheetHeader>
