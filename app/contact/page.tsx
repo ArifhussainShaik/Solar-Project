@@ -220,7 +220,7 @@ export default function ContactPage() {
                 <div className="mt-4 text-center">
                   <Button asChild variant="outline" className="bg-white hover:bg-gray-100">
                     <Link
-                      href="https://www.google.com/maps/search/?api=1&query=Shop+no.26-1-1+chamakaluva+rs+road+Nandyala+Andhra+Pradesh+518501"
+                      href="https://maps.app.goo.gl/2NEraD1tkCaYfAEM8"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
