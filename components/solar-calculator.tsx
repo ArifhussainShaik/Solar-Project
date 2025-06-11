@@ -19,9 +19,8 @@ interface SolarCalculatorProps {
 
 export default function SolarCalculator({ location = "Andhra Pradesh" }: SolarCalculatorProps) {
   const [monthlyBill, setMonthlyBill] = useState(5000)
-  const [roofArea, setRoofArea] = useState(500)
   const [systemType, setSystemType] = useState("grid-tied")
-  const [selectedLocation, setSelectedLocation] = useState(location)
+  const [selectedLocation, setSelectedLocation] = useState("Nandyal")
   const [calculationDone, setCalculationDone] = useState(false)
 
   // Calculation results
@@ -40,11 +39,8 @@ export default function SolarCalculator({ location = "Andhra Pradesh" }: SolarCa
     const avgKwhPerMonth = monthlyBill / 8 // Assuming ₹8 per kWh
     const estimatedSystemSizeKw = avgKwhPerMonth / 120 // Assuming 120 kWh per month per kW of solar
 
-    // Adjust based on roof area (rough estimate)
-    const maxSizeBasedOnRoof = roofArea / 100 // Assuming 100 sq ft per kW
-
     // Take the smaller of the two
-    const recommendedSizeKw = Math.min(estimatedSystemSizeKw, maxSizeBasedOnRoof)
+    const recommendedSizeKw = estimatedSystemSizeKw
 
     // Cost calculation (rough estimate)
     let costPerWatt = 60 // ₹60 per watt for grid-tied
@@ -117,26 +113,6 @@ export default function SolarCalculator({ location = "Andhra Pradesh" }: SolarCa
             <span>₹2,000</span>
             <span>₹5,000</span>
             <span>₹10,000+</span>
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <Label htmlFor="roof-area">Available Roof Area (sq ft)</Label>
-            <span className="text-sm font-medium">{roofArea} sq ft</span>
-          </div>
-          <Slider
-            id="roof-area"
-            min={100}
-            max={2000}
-            step={50}
-            value={[roofArea]}
-            onValueChange={(value) => setRoofArea(value[0])}
-          />
-          <div className="flex justify-between text-xs text-gray-500 mt-1">
-            <span>Small</span>
-            <span>Medium</span>
-            <span>Large</span>
           </div>
         </div>
 
