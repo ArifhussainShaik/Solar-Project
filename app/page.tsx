@@ -43,18 +43,17 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            {/* Hero Image - Replace with your actual solar panel image */}
+            {/* Hero Image */}
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden">
               <Image
                 src="/images/hero-solar-panels.jpg"
-                alt="Solar panels installed on residential rooftop in Nandyal, Andhra Pradesh"
+                alt="Professional solar panel installation on a residential rooftop in Nandyal, Andhra Pradesh, showcasing high-quality Tier-1 solar panels with optimal positioning for maximum energy generation"
                 fill
                 className="object-cover"
                 priority
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
-              {/* Optional overlay for better text contrast */}
               <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
             </div>
           </div>
