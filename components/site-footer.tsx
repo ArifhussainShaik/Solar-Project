@@ -13,7 +13,7 @@ export default function SiteFooter() {
               <Sun className="h-6 w-6 text-yellow-500" />
               <span className="text-xl font-bold flex flex-col">
                 Kohinoor Enterprises
-                <span className="text-sm font-normal">(Solar Hub)</span>
+                <span className="text-[0.65rem] font-bold">(The Solar Hub)</span>
               </span>
             </div>
             <p className="text-gray-300">
