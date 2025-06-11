@@ -230,14 +230,9 @@ export default function KurnoolPage() {
                     Solar installed a 25kW system that has not only reduced our operating costs but also ensured
                     continuous production. The system paid for itself in just 3 years."
                   </p>
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                      <Image src="/images/customer-testimonial-1.jpg" alt="Customer" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-green-800">Suresh Reddy</p>
-                      <p className="text-sm text-gray-500">Business Owner, Kurnool</p>
-                    </div>
+                  <div>
+                    <p className="font-semibold text-green-800">Shafi Khan</p>
+                    <p className="text-sm text-gray-500">Business Owner, Kurnool</p>
                   </div>
                 </div>
               </CardContent>
@@ -251,14 +246,9 @@ export default function KurnoolPage() {
                     our critical equipment running. The installation was professional and the system has been extremely
                     reliable."
                   </p>
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                      <Image src="/images/customer-testimonial-2.jpg" alt="Customer" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-green-800">Dr. Lakshmi Prasad</p>
-                      <p className="text-sm text-gray-500">Hospital Administrator, Kurnool</p>
-                    </div>
+                  <div>
+                    <p className="font-semibold text-green-800">Dr. Lakshmi Prasad</p>
+                    <p className="text-sm text-gray-500">Hospital Administrator, Kurnool</p>
                   </div>
                 </div>
               </CardContent>

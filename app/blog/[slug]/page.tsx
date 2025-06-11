@@ -15,9 +15,12 @@ const blogPosts = {
     author: "Rajesh Kumar",
     authorRole: "Founder & CEO",
     authorImage: "/placeholder.svg?height=100&width=100",
-    featuredImage: "/placeholder.svg?height=600&width=1200",
+    featuredImage: "/images/Future-blog.jpg",
     content: `
       <p>Andhra Pradesh is emerging as a solar powerhouse in India. With abundant sunshine and supportive government policies, the state is witnessing a solar revolution. In this article, we explore the future of solar energy in Andhra Pradesh and how it's transforming the energy landscape.</p>
+      <div className="relative w-full h-[250px] md:h-[350px] my-6 rounded-lg overflow-hidden">
+        <img src="/images/solar-farm.jpg" alt="Large solar farm in Andhra Pradesh" className="object-cover w-full h-full" />
+      </div>
       
       <h2>Abundant Solar Resources</h2>
       <p>Andhra Pradesh receives an average of 300 sunny days per year, making it one of the most suitable regions in India for solar energy generation. The state has a solar power potential of approximately 38.5 GW, which is significant considering India's target of 100 GW of solar capacity by 2022.</p>
@@ -33,6 +36,9 @@ const blogPosts = {
       
       <h2>Growth in Residential Solar</h2>
       <p>Residential solar installations are gaining popularity across Andhra Pradesh as homeowners recognize the long-term economic and environmental benefits. With decreasing solar panel costs and increasing electricity tariffs, the return on investment for residential solar systems has become increasingly attractive.</p>
+      <div className="relative w-full h-[250px] md:h-[350px] my-6 rounded-lg overflow-hidden">
+        <img src="/images/residential-rooftop-solar.jpg" alt="Residential rooftop solar installation" className="object-cover w-full h-full" />
+      </div>
       
       <p>A typical 5kW residential solar system in Andhra Pradesh can:</p>
       <ul>

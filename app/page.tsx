@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, MapPin, Phone, Sun, Zap, Shield, Award } from "lucide-react"
+import { ArrowRight, CheckCircle, MapPin, Phone, Sun, Zap, Shield, Award, Star, Leaf, Trees, Recycle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -22,16 +22,16 @@ export default function Home() {
                   Join 500+ Satisfied Customers in Andhra Pradesh
                 </Badge>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  Cut Your Electricity Bills by 90% with Solar Energy
+                  Cut Your Electricity Bills by 95% with Solar Energy
                 </h1>
                 <p className="max-w-[600px] text-gray-200 md:text-xl">
                   Professional solar installations for homes and businesses in Nandyal, Kurnool, and across Andhra
-                  Pradesh. Start saving money from day one with our premium solar solutions.
+                  Pradesh. Start saving up to 95% on your electricity bills from day one with our premium solar solutions.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button asChild size="lg" className="bg-theme-secondary hover:bg-theme-secondary text-theme-text">
-                  <Link href="/contact">Get Free Site Survey Within 48 Hours</Link>
+                  <Link href="/contact">Get Free Site Survey Within 24 Hours</Link>
                 </Button>
                 <Button
                   asChild
@@ -83,7 +83,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-theme-muted">
-                  High-efficiency Tier-1 solar panels from top manufacturers with 25-year performance warranties and
+                  High-efficiency Tier-1 solar panels from top manufacturers with 30-year performance warranties and
                   proven track record
                 </p>
               </CardContent>
@@ -95,7 +95,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-theme-muted">
-                  Reduce your electricity bills by up to 90% with our custom solar solutions. Money-back guarantee if
+                  Reduce your electricity bills by up to 95% with our custom solar solutions. Money-back guarantee if
                   system doesn't perform as promised
                 </p>
               </CardContent>
@@ -237,7 +237,7 @@ export default function Home() {
                   variant="outline"
                   className="border-theme-accent text-theme-accent hover:bg-theme-accent hover:text-theme-primary bg-transparent"
                 >
-                  <Link href="/locations/kurnool">
+                  <Link href="/locations/nandyal">
                     Learn More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -274,15 +274,14 @@ export default function Home() {
             <div className="bg-gray-50 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">What maintenance is required?</h3>
               <p className="text-sm text-gray-600">
-                Solar systems require minimal maintenance - just occasional cleaning and an annual inspection. We offer
-                comprehensive maintenance packages starting at ₹2,500/year.
+                Our solar systems require zero maintenance. We use high-quality components that are designed to work efficiently without any regular upkeep.
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Do you offer warranties?</h3>
               <p className="text-sm text-gray-600">
-                Yes! We provide a 5-year workmanship warranty on installation and 25-year performance warranty on
-                panels. Our systems include a money-back guarantee if they don't perform as promised.
+                Yes! We provide a 5-year workmanship warranty on installation and 30-year performance warranty on
+                solar panels. Our comprehensive warranty coverage ensures your investment is protected.
               </p>
             </div>
           </div>
@@ -294,63 +293,125 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Lead Capture Section */}
-      <section className="w-full py-8 md:py-12 bg-gray-50">
+      {/* Testimonials Section */}
+      <section className="w-full py-12 md:py-24 bg-theme-background theme-transition">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-sm border">
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-theme-primary mb-2">Download Our Free Solar Guide</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Learn everything you need to know about going solar in Andhra Pradesh. Get instant access to our
-                comprehensive guide covering costs, benefits, and installation process.
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-primary">
+                What Our Customers Say
+              </h2>
+              <p className="max-w-[900px] text-theme-muted md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Join hundreds of satisfied customers who have made the switch to solar energy
               </p>
-              <Badge className="bg-yellow-500 text-black hover:bg-yellow-600">
-                Limited Time Offer - Free Consultation Included
-              </Badge>
             </div>
-            <div className="w-full md:w-auto flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                className="px-4 py-2 border rounded-md w-full md:w-64"
-                required
-              />
-              <Button className="w-full bg-theme-primary hover:bg-theme-primary text-theme-accent">
-                Download Free Guide
-              </Button>
-            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            <Card className="bg-theme-card border-theme-border theme-transition">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-theme-muted mb-4">
+                  "Switching to solar with Kohinoor Enterprises was the best decision for our home. Our electricity bills have reduced by 90% and the installation was completed professionally."
+                </p>
+                <div>
+                  <p className="font-medium text-theme-text">Ravi Kumar</p>
+                  <p className="text-sm text-theme-muted">Nandyal, Andhra Pradesh</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-theme-card border-theme-border theme-transition">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-theme-muted mb-4">
+                  "The team at Kohinoor Enterprises provided excellent service from start to finish. They helped us understand the process and made the transition to solar seamless."
+                </p>
+                <div>
+                  <p className="font-medium text-theme-text">Priya Sharma</p>
+                  <p className="text-sm text-theme-muted">Kurnool, Andhra Pradesh</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-theme-card border-theme-border theme-transition">
+              <CardContent className="pt-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-theme-muted mb-4">
+                  "The solar calculator helped us understand our potential savings accurately. The installation was quick and the after-sales support has been exceptional."
+                </p>
+                <div>
+                  <p className="font-medium text-theme-text">Suresh Reddy</p>
+                  <p className="text-sm text-theme-muted">Guntur, Andhra Pradesh</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 bg-theme-secondary theme-transition">
+      {/* Environmental Impact Section */}
+      <section className="w-full py-12 md:py-24 bg-green-50 theme-transition">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-text">
-                Ready to Start Saving with Solar?
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-800">
+                Environmental Impact
               </h2>
-              <p className="max-w-[900px] text-theme-text md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Contact us today for a free consultation and personalized quote. Join hundreds of satisfied customers
-                across Andhra Pradesh.
+              <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Make a positive impact on the environment while saving money
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild size="lg" className="bg-theme-primary hover:bg-theme-primary text-theme-accent">
-                <Link href="/contact">Get Free Consultation</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-theme-text text-theme-text hover:bg-theme-text hover:text-theme-secondary"
-              >
-                <Link href="tel:+919985690350">
-                  <Phone className="mr-2 h-4 w-4" /> Call +91 99856 90350
-                </Link>
-              </Button>
-            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <Card className="bg-white border-green-100 theme-transition">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-green-800">
+                  <Leaf className="h-5 w-5" />
+                  Carbon Reduction
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Each kilowatt of solar power installed reduces carbon emissions by approximately 1,500 kg per year
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white border-green-100 theme-transition">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-green-800">
+                  <Trees className="h-5 w-5" />
+                  Tree Equivalent
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  A 5kW solar system is equivalent to planting 100 trees in terms of carbon reduction
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="bg-white border-green-100 theme-transition">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-green-800">
+                  <Recycle className="h-5 w-5" />
+                  Sustainable Energy
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Solar energy is 100% renewable and helps reduce dependence on fossil fuels
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

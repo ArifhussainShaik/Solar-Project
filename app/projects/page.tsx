@@ -61,7 +61,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: March 2023</span>
+                      <span>Completed: January 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 5kW grid-tied solar system installed on a residential rooftop, providing 80% of the household's
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: January 2023</span>
+                      <span>Completed: February 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 25kW solar system for a manufacturing facility, reducing their electricity costs by 60% and
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: November 2022</span>
+                      <span>Completed: March 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 10kW solar-powered irrigation system for a 15-acre farm, eliminating diesel generator costs and
@@ -145,7 +145,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: February 2023</span>
+                      <span>Completed: April 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 7kW off-grid solar system with battery storage for a rural home, providing 24/7 power
@@ -173,7 +173,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: April 2023</span>
+                      <span>Completed: May 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 15kW solar system for a local school, reducing electricity costs and providing educational
@@ -201,7 +201,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: May 2023</span>
+                      <span>Completed: June 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 30kW solar system with battery backup for a hospital, ensuring critical equipment remains
@@ -234,7 +234,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: March 2023</span>
+                      <span>Completed: January 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 5kW grid-tied solar system installed on a residential rooftop, providing 80% of the household's
@@ -262,7 +262,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: February 2023</span>
+                      <span>Completed: January 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 7kW off-grid solar system with battery storage for a rural home, providing 24/7 power
@@ -295,7 +295,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: January 2023</span>
+                      <span>Completed: February 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 25kW solar system for a manufacturing facility, reducing their electricity costs by 60% and
@@ -323,7 +323,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: April 2023</span>
+                      <span>Completed: March 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 15kW solar system for a local school, reducing electricity costs and providing educational
@@ -351,7 +351,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: May 2023</span>
+                      <span>Completed: April 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 30kW solar system with battery backup for a hospital, ensuring critical equipment remains
@@ -384,7 +384,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: November 2022</span>
+                      <span>Completed: March 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 10kW solar-powered irrigation system for a 15-acre farm, eliminating diesel generator costs and
@@ -412,7 +412,7 @@ export default function ProjectsPage() {
                   <CardContent>
                     <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                       <Calendar className="h-4 w-4" />
-                      <span>Completed: March 2023</span>
+                      <span>Completed: May 2025</span>
                     </div>
                     <p className="text-gray-500">
                       A 12kW solar system powering a cold storage facility for agricultural produce, ensuring consistent

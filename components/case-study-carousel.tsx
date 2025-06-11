@@ -36,7 +36,7 @@ const caseStudies = [
       "Eliminated production losses due to power outages",
       "Enhanced green credentials for the business",
     ],
-    customerName: "Suresh Reddy",
+    customerName: "Shafi Khan",
     customerType: "Business Owner",
   },
   {
@@ -51,7 +51,7 @@ const caseStudies = [
       "Increased crop yield due to consistent irrigation",
       "Zero maintenance costs in the first year",
     ],
-    customerName: "Venkat Reddy",
+    customerName: "Subba Reddy",
     customerType: "Farmer",
   },
 ]
@@ -99,19 +99,9 @@ export default function CaseStudyCarousel() {
                 </ul>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image
-                    src="/images/customer-testimonial-1.jpg"
-                    alt={activeCase.customerName}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-medium text-green-800">{activeCase.customerName}</p>
-                  <p className="text-sm text-gray-500">{activeCase.customerType}</p>
-                </div>
+              <div>
+                <p className="font-medium text-green-800">{activeCase.customerName}</p>
+                <p className="text-sm text-gray-500">{activeCase.customerType}</p>
               </div>
             </div>
           </div>
@@ -153,4 +143,4 @@ export default function CaseStudyCarousel() {
       </div>
     </div>
   )
-}
+} 

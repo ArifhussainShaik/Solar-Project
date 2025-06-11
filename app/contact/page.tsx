@@ -207,7 +207,7 @@ export default function ContactPage() {
               <div className="relative w-full overflow-hidden rounded-lg">
                 <div className="w-full h-[300px] rounded-lg overflow-hidden bg-gray-200">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.8234567890123!2d78.4803!3d15.4781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDI4JzQxLjIiTiA3OMKwMjgnNDkuMSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479.5637037570605!2d78.4663444765426!3d15.48211601653438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5b3a0cba350eb%3A0x6d5cfea3bdca9f15!2sKOHINOOR%20BATTERIES%20AND%20SOLAR%20SYSTEMS!5e1!3m2!1sen!2sin!4v1749641912335!5m2!1sen!2sin"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
@@ -308,9 +308,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-500">
-                  Solar systems require minimal maintenance. We recommend cleaning the panels 2-4 times a year and
-                  having a professional inspection annually. We offer comprehensive maintenance packages starting at
-                  ₹2,500/year to ensure your system performs optimally throughout its lifespan.
+                  Our solar systems require zero maintenance. We use high-quality components that are designed to work efficiently without any regular upkeep.
                 </p>
               </CardContent>
             </Card>

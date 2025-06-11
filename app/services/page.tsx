@@ -37,7 +37,7 @@ export default function ServicesPage() {
                 <p className="text-gray-500 md:text-lg">
                   At Kohinoor Enterprises, we provide end-to-end solar solutions tailored to your specific needs. From
                   initial consultation and system design to installation and ongoing maintenance, our team of experts
-                  handles every aspect of your solar journey.
+                  handles every aspect of your solar journey. Our systems are designed to reduce your electricity bills by up to 95%.
                 </p>
                 <p className="text-gray-500 md:text-lg">
                   We work with top-quality solar panels, inverters, and batteries to ensure optimal performance and
@@ -76,7 +76,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             <Card>
               <CardHeader className="flex flex-row items-center gap-4">
                 <Home className="h-8 w-8 text-yellow-500" />
@@ -85,7 +85,7 @@ export default function ServicesPage() {
               <CardContent>
                 <p className="text-gray-500">
                   Custom-designed rooftop solar panel systems that maximize energy production based on your roof's
-                  orientation and available space.
+                  orientation and available space. Achieve up to 95% reduction in your electricity bills with our optimized solutions.
                 </p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-2">
@@ -169,7 +169,7 @@ export default function ServicesPage() {
               <CardContent>
                 <p className="text-gray-500">
                   Large-scale solar installations for businesses, factories, and commercial buildings designed to
-                  significantly reduce electricity costs.
+                  significantly reduce electricity costs by up to 95%.
                 </p>
                 <ul className="mt-4 space-y-2">
                   <li className="flex items-start gap-2">

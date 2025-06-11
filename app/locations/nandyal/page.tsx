@@ -229,14 +229,9 @@ export default function NandyalPage() {
                     and professional, and my electricity bills have dropped by more than 80%. Their local team provides
                     excellent support whenever needed."
                   </p>
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                      <Image src="/images/customer-testimonial-3.jpg" alt="Customer" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-green-800">Ramesh Kumar</p>
-                      <p className="text-sm text-gray-500">Nandyal Town</p>
-                    </div>
+                  <div>
+                    <p className="font-semibold text-green-800">Ramesh Kumar</p>
+                    <p className="text-sm text-gray-500">Nandyal Town</p>
                   </div>
                 </div>
               </CardContent>
@@ -249,14 +244,9 @@ export default function NandyalPage() {
                     installed a solar-powered irrigation system that has completely eliminated my fuel costs. The system
                     has been running flawlessly for over a year now."
                   </p>
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden">
-                      <Image src="/images/customer-testimonial-4.jpg" alt="Customer" fill className="object-cover" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-green-800">Venkat Reddy</p>
-                      <p className="text-sm text-gray-500">Rural Nandyal</p>
-                    </div>
+                  <div>
+                    <p className="font-semibold text-green-800">Venkat Reddy</p>
+                    <p className="text-sm text-gray-500">Rural Nandyal</p>
                   </div>
                 </div>
               </CardContent>

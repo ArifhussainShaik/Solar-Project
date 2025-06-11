@@ -8,11 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import ThemeSwitcher from "@/components/theme-switcher"
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-theme-background border-theme-border theme-transition">
+    <header className="sticky top-0 z-40 w-full border-b bg-white border-gray-200">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-3">
@@ -27,7 +26,7 @@ export default function SiteHeader() {
                 className="h-10 w-auto rounded-sm shadow-sm" 
                 priority
               />
-              <span className="ml-2 text-lg font-semibold text-theme-text">
+              <span className="ml-2 text-lg font-semibold text-gray-900">
                 Kohinoor Enterprises
               </span>
             </div>
@@ -41,37 +40,37 @@ export default function SiteHeader() {
                 className="h-9 w-auto rounded-sm shadow-sm" 
                 priority
               />
-              <span className="ml-2 text-base font-semibold text-theme-text">
+              <span className="ml-2 text-base font-semibold text-gray-900">
                 Kohinoor Enterprises
               </span>
             </div>
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden items-center gap-4 md:flex">
           <NavLinks className="flex gap-6" />
-          <ThemeSwitcher />
+          
           <Button
             asChild
             variant="outline"
             size="sm"
-            className="border-theme-border text-theme-text hover:bg-theme-primary hover:text-theme-accent"
+            className="border-gray-200 text-gray-900 hover:bg-green-700 hover:text-white"
           >
             <Link href="tel:+919985690350">
               <Phone className="mr-2 h-4 w-4" /> +91 99856 90350
             </Link>
           </Button>
-          <Button asChild size="sm" className="bg-theme-primary hover:bg-theme-primary text-theme-accent">
+          <Button asChild size="sm" className="bg-green-700 hover:bg-green-800 text-white">
             <Link href="/contact">Get a Free Quote</Link>
           </Button>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="md:hidden border-theme-border text-theme-text">
+            <Button variant="outline" size="icon" className="md:hidden border-gray-200 text-gray-900">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-theme-background">
+          <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
             <SheetHeader className="mb-4">
               <SheetTitle className="flex items-center gap-3">
 
@@ -83,27 +82,27 @@ export default function SiteHeader() {
                   className="h-8 w-auto rounded-sm shadow-sm" 
                   priority
                 />
-                <span className="text-base font-semibold text-theme-text">
+                <span className="text-base font-semibold text-gray-900">
                   Kohinoor Solar
                 </span>
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-4">
               <NavLinks className="flex flex-col gap-4" isMobile />
-              <div className="pt-4 border-t border-theme-border">
-                <ThemeSwitcher />
+              <div className="pt-4 border-t border-gray-200">
+                
               </div>
               <Button
                 asChild
                 variant="outline"
                 size="sm"
-                className="border-theme-border text-theme-text hover:bg-theme-primary hover:text-theme-accent"
+                className="border-gray-200 text-gray-900 hover:bg-green-700 hover:text-white"
               >
                 <Link href="tel:+919985690350">
                   <Phone className="mr-2 h-4 w-4" /> +91 99856 90350
                 </Link>
               </Button>
-              <Button asChild size="sm" className="bg-theme-primary hover:bg-theme-primary text-theme-accent">
+              <Button asChild size="sm" className="bg-green-700 hover:bg-green-800 text-white">
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
             </nav>
@@ -136,8 +135,8 @@ function NavLinks({ className, isMobile = false }: { className?: string; isMobil
             <Link
               href={link.href}
               className={cn(
-                "text-base transition-colors hover:text-theme-primary theme-transition",
-                isActive ? "font-medium text-theme-primary" : "text-theme-muted",
+                "text-base transition-colors hover:text-green-800",
+                isActive ? "font-medium text-green-800" : "text-gray-500",
               )}
             >
               {link.label}
@@ -148,8 +147,8 @@ function NavLinks({ className, isMobile = false }: { className?: string; isMobil
             key={link.href}
             href={link.href}
             className={cn(
-              "text-sm font-medium transition-colors hover:text-theme-primary theme-transition",
-              isActive ? "text-theme-primary" : "text-theme-muted",
+              "text-sm font-medium transition-colors hover:text-green-800",
+              isActive ? "text-green-800" : "text-gray-500",
             )}
           >
             {link.label}

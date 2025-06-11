@@ -14,7 +14,7 @@ export default function SiteFooter() {
               <span className="text-xl font-bold">Kohinoor Enterprises</span>
             </div>
             <p className="text-gray-300">
-              Providing sustainable solar energy solutions for homes and businesses across Andhra Pradesh since 2015.
+              Providing sustainable solar energy solutions for homes and businesses across Andhra Pradesh since 1979.
             </p>
             <div className="flex space-x-4">
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">

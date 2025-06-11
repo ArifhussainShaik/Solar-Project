@@ -18,7 +18,7 @@ export default function AboutPage() {
                 About Kohinoor Enterprises
               </h1>
               <p className="max-w-[700px] text-gray-200 md:text-xl mx-auto">
-                Bringing sustainable energy solutions to Andhra Pradesh since 2015
+                Bringing sustainable energy solutions to Andhra Pradesh since 1979
               </p>
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function AboutPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px]">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/solar-installation-team.jpg"
                 alt="Kohinoor Enterprises team installing solar panels on a residential rooftop in Nandyal"
                 fill
                 className="object-cover rounded-lg"
@@ -41,9 +41,9 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-green-800">Our Story</h2>
                 <p className="text-gray-500 md:text-lg">
-                  Kohinoor Enterprises was established in 2015 with a vision to bring clean, renewable energy to homes
+                  Kohinoor Enterprises was established in 1979 with a vision to bring clean, renewable energy to homes
                   and businesses across Andhra Pradesh. What started as a dedicated operation in Nandyal has grown into
-                  one of the region's most trusted solar solution providers.
+                  one of the region's most trusted solar solution providers, helping customers reduce their electricity bills by up to 95%.
                 </p>
                 <p className="text-gray-500 md:text-lg">
                   Our journey began when our founder, Rajesh Kumar, recognized the immense potential for solar energy in
@@ -73,7 +73,7 @@ export default function AboutPage() {
               <CardContent>
                 <p className="text-gray-500">
                   To accelerate the adoption of solar energy in Andhra Pradesh by providing high-quality, affordable
-                  solar solutions that reduce electricity costs and environmental impact while empowering communities
+                  solar solutions that reduce electricity costs by up to 95% and environmental impact while empowering communities
                   with sustainable energy independence and creating local employment opportunities.
                 </p>
               </CardContent>
@@ -204,18 +204,17 @@ export default function AboutPage() {
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-40 w-40 rounded-full overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Rajesh Kumar - Founder & Managing Director of Kohinoor Enterprises"
+                  src="/images/Mahaboob.jpg"
+                  alt="Mahaboob Basha - Founder of Kohinoor Enterprises"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-bold text-green-800">Rajesh Kumar</h3>
-                <p className="text-gray-500 mb-2">Founder & Managing Director</p>
+                <h3 className="text-xl font-bold text-green-800">Mahaboob Basha</h3>
+                <p className="text-gray-500 mb-2">Founder</p>
                 <p className="text-sm text-gray-600 max-w-xs">
-                  15+ years in renewable energy sector. B.Tech in Electrical Engineering from JNTU. Passionate about
-                  sustainable energy solutions.
+                  Visionary leader with extensive experience in renewable energy sector. Passionate about sustainable energy solutions.
                 </p>
               </div>
             </div>
@@ -223,18 +222,17 @@ export default function AboutPage() {
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-40 w-40 rounded-full overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Priya Sharma - Technical Director at Kohinoor Enterprises"
+                  src="/images/Feroz.jpg"
+                  alt="Firoz - Managing Director at Kohinoor Enterprises"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-bold text-green-800">Priya Sharma</h3>
-                <p className="text-gray-500 mb-2">Technical Director</p>
+                <h3 className="text-xl font-bold text-green-800">Firoz</h3>
+                <p className="text-gray-500 mb-2">Managing Director</p>
                 <p className="text-sm text-gray-600 max-w-xs">
-                  M.Tech in Power Systems. 12+ years experience in solar system design and grid integration. MNRE
-                  certified solar engineer.
+                  Experienced leader driving business growth and operational excellence in solar energy solutions.
                 </p>
               </div>
             </div>
@@ -242,18 +240,18 @@ export default function AboutPage() {
             <div className="flex flex-col items-center space-y-4">
               <div className="relative h-40 w-40 rounded-full overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Venkat Reddy - Installation Manager at Kohinoor Enterprises"
+                  src="/images/Saddam.jpg"
+                  alt="Saddam - Installation Manager at Kohinoor Enterprises"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
+                  style={{ objectPosition: 'center 20%' }}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-bold text-green-800">Venkat Reddy</h3>
+                <h3 className="text-xl font-bold text-green-800">Saddam</h3>
                 <p className="text-gray-500 mb-2">Installation Manager</p>
                 <p className="text-sm text-gray-600 max-w-xs">
-                  10+ years in solar installations. Leads our certified installation team. Expert in rooftop and
-                  ground-mounted systems.
+                  Expert in solar installations with proven track record in managing complex projects and leading installation teams.
                 </p>
               </div>
             </div>
@@ -317,7 +315,7 @@ export default function AboutPage() {
                   <p>Mon-Sat: 9:00 AM - 7:00 PM | Sun: 10:00 AM - 2:00 PM</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black">
                   <Link href="/contact">Contact Us</Link>
                 </Button>
@@ -328,7 +326,7 @@ export default function AboutPage() {
                   className="border-white text-white hover:bg-white hover:text-green-800 bg-transparent"
                 >
                   <Link
-                    href="https://maps.google.com/maps?q=Shop+no.26-1-1+chamakaluva+rs+road+Nandyala+Andhra+Pradesh+518501"
+                    href="https://maps.app.goo.gl/zYB62xYcLtNChixbA"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -337,13 +335,17 @@ export default function AboutPage() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-[300px] md:h-[400px]">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Kohinoor Enterprises showroom and office in Nandyal, Andhra Pradesh"
-                fill
-                className="object-cover rounded-lg"
-              />
+            <div className="relative h-[300px] md:h-[400px] w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479.5637037570605!2d78.4663444765426!3d15.48211601653438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5b3a0cba350eb%3A0x6d5cfea3bdca9f15!2sKOHINOOR%20BATTERIES%20AND%20SOLAR%20SYSTEMS!5e1!3m2!1sen!2sin!4v1749641912335!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: '0.5rem' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kohinoor Enterprises Location"
+              ></iframe>
             </div>
           </div>
         </div>

@@ -45,7 +45,7 @@ export default function BlogPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
             <div className="relative h-[300px] md:h-[400px] lg:h-full">
               <Image
-                src="/images/blog-solar-future.jpg"
+                src="/images/Future-blog.jpg"
                 alt="Solar panels on a rooftop"
                 fill
                 className="object-cover rounded-lg"
@@ -128,7 +128,7 @@ export default function BlogPage() {
             <Card>
               <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
                 <Image
-                  src="/images/blog-battery-technology.jpg"
+                  src="/images/Solar-battery.jpg"
                   alt="Solar battery storage"
                   fill
                   className="object-cover"
