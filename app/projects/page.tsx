@@ -148,8 +148,7 @@ export default function ProjectsPage() {
                       <span>Completed: April 2025</span>
                     </div>
                     <p className="text-gray-500">
-                      A 7kW off-grid solar system with battery storage for a rural home, providing 24/7 power
-                      independence from the grid.
+                      This is on 7kW Off-Grid Home System on project Section
                     </p>
                   </CardContent>
                 </Card>
@@ -265,8 +264,7 @@ export default function ProjectsPage() {
                       <span>Completed: January 2025</span>
                     </div>
                     <p className="text-gray-500">
-                      A 7kW off-grid solar system with battery storage for a rural home, providing 24/7 power
-                      independence from the grid.
+                      This is on 7kW Off-Grid Home System on project Section
                     </p>
                   </CardContent>
                 </Card>

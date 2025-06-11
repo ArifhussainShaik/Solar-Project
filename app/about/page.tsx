@@ -46,7 +46,7 @@ export default function AboutPage() {
                   one of the region's most trusted solar solution providers, helping customers reduce their electricity bills by up to 95%.
                 </p>
                 <p className="text-gray-500 md:text-lg">
-                  Our journey began when our founder, Rajesh Kumar, recognized the immense potential for solar energy in
+                  Our journey began when our founder, Mahaboob Basha, recognized the immense potential for solar energy in
                   our sun-rich region and the opportunity to help people reduce their dependence on the grid while
                   saving money and contributing to a greener planet.
                 </p>
