@@ -4,7 +4,10 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
-import { Check, Clock, MapPin, Phone, Send, Mail } from "lucide-react"
+import { Check, Clock, MapPin, Phone, Send, Mail, AlertCircle } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,20 +16,64 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import WhatsAppButton from "@/components/whatsapp-button"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+
+// Form validation schema
+const formSchema = z.object({
+  firstName: z.string().min(2, "First name must be at least 2 characters"),
+  lastName: z.string().min(2, "Last name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  interest: z.enum(["residential", "commercial", "agricultural", "maintenance", "other"]),
+  monthlyBill: z.string().optional(),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+})
+
+type FormData = z.infer<typeof formSchema>
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      interest: "residential",
+    },
+  })
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+  const onSubmit = async (data: FormData) => {
+    try {
+      setIsSubmitting(true)
+      setError(null)
 
-    setIsSubmitting(false)
-    setFormSubmitted(true)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit form")
+      }
+
+      setFormSubmitted(true)
+      reset()
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -74,28 +121,67 @@ export default function ContactPage() {
                       </Button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                      {error && (
+                        <Alert variant="destructive">
+                          <AlertCircle className="h-4 w-4" />
+                          <AlertDescription>{error}</AlertDescription>
+                        </Alert>
+                      )}
                       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div className="space-y-2">
-                          <Label htmlFor="first-name">First name *</Label>
-                          <Input id="first-name" placeholder="Enter your first name" required />
+                          <Label htmlFor="firstName">First name *</Label>
+                          <Input
+                            id="firstName"
+                            {...register("firstName")}
+                            placeholder="Enter your first name"
+                          />
+                          {errors.firstName && (
+                            <p className="text-sm text-red-500">{errors.firstName.message}</p>
+                          )}
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="last-name">Last name *</Label>
-                          <Input id="last-name" placeholder="Enter your last name" required />
+                          <Label htmlFor="lastName">Last name *</Label>
+                          <Input
+                            id="lastName"
+                            {...register("lastName")}
+                            placeholder="Enter your last name"
+                          />
+                          {errors.lastName && (
+                            <p className="text-sm text-red-500">{errors.lastName.message}</p>
+                          )}
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" placeholder="Enter your email address" required />
+                        <Input
+                          id="email"
+                          type="email"
+                          {...register("email")}
+                          placeholder="Enter your email address"
+                        />
+                        {errors.email && (
+                          <p className="text-sm text-red-500">{errors.email.message}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" placeholder="+91 99999 99999" required />
+                        <Input
+                          id="phone"
+                          type="tel"
+                          {...register("phone")}
+                          placeholder="+91 99999 99999"
+                        />
+                        {errors.phone && (
+                          <p className="text-sm text-red-500">{errors.phone.message}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label>I'm interested in: *</Label>
-                        <RadioGroup defaultValue="residential" required>
+                        <RadioGroup
+                          defaultValue="residential"
+                          onValueChange={(value) => register("interest").onChange({ target: { value } })}
+                        >
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="residential" id="residential" />
                             <Label htmlFor="residential">Residential Solar (Home)</Label>
@@ -117,21 +203,37 @@ export default function ContactPage() {
                             <Label htmlFor="other">Other</Label>
                           </div>
                         </RadioGroup>
+                        {errors.interest && (
+                          <p className="text-sm text-red-500">{errors.interest.message}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="monthly-bill">Monthly Electricity Bill (₹)</Label>
-                        <Input id="monthly-bill" type="number" placeholder="e.g., 5000" min="500" />
+                        <Label htmlFor="monthlyBill">Monthly Electricity Bill (₹)</Label>
+                        <Input
+                          id="monthlyBill"
+                          type="number"
+                          {...register("monthlyBill")}
+                          placeholder="e.g., 5000"
+                          min="500"
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="message">Message *</Label>
                         <Textarea
                           id="message"
+                          {...register("message")}
                           placeholder="Please provide details about your requirements, roof area, location, and any specific questions you have"
                           className="min-h-[120px]"
-                          required
                         />
+                        {errors.message && (
+                          <p className="text-sm text-red-500">{errors.message.message}</p>
+                        )}
                       </div>
-                      <Button type="submit" className="w-full bg-green-700 hover:bg-green-800" disabled={isSubmitting}>
+                      <Button
+                        type="submit"
+                        className="w-full bg-green-700 hover:bg-green-800"
+                        disabled={isSubmitting}
+                      >
                         {isSubmitting ? (
                           <>Sending...</>
                         ) : (
