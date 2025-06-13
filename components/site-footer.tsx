@@ -20,7 +20,7 @@ export default function SiteFooter() {
               Providing sustainable solar energy solutions for homes and businesses across Andhra Pradesh since 1979.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.facebook.com/profile.php?id=61577038484420" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
