@@ -21,8 +21,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 // Form validation schema
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
-  lastName: z.string().min(2, "Last name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
+  lastName: z.string().optional(),
+  email: z.string().email("Invalid email address").optional(),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   interest: z.enum(["residential", "commercial", "agricultural", "maintenance", "other"]),
   monthlyBill: z.string().optional(),
@@ -141,7 +141,7 @@ export default function ContactPage() {
                           )}
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="lastName">Last name *</Label>
+                          <Label htmlFor="lastName">Last name</Label>
                           <Input
                             id="lastName"
                             {...register("lastName")}
@@ -153,7 +153,7 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input
                           id="email"
                           type="email"
