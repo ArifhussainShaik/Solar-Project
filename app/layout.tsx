@@ -5,6 +5,7 @@ import Script from "next/script"
 
 import SiteHeader from "@/components/site-header"
 import SiteFooter from "@/components/site-footer"
+import ErrorBoundary from "@/components/ui/error-boundary"
 
 export const metadata: Metadata = {
   title: "Kohinoor Enterprises - Cut Your Electricity Bills by 95%",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: process.env.GOOGLE_SITE_VERIFICATION,
   },
   alternates: {
     canonical: "https://kohinoorsolar.com",
@@ -174,12 +175,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           }}
         />
       </head>
-      <body>
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
+      <body suppressHydrationWarning={true}>
+        <ErrorBoundary>
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </div>
+        </ErrorBoundary>
       </body>
     </html>
   )

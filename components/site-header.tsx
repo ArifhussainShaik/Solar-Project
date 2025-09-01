@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { COMPANY, NAV_LINKS } from "@/lib/constants"
 
 export default function SiteHeader() {
   return (
@@ -20,30 +21,30 @@ export default function SiteHeader() {
             <div className="hidden md:flex items-center">
               <Image 
                 src="/images/mainlogo.jpg" 
-                alt="Kohinoor Enterprises Logo" 
+                alt={`${COMPANY.name} Logo`} 
                 width={40}
                 height={40}
                 className="h-10 w-auto rounded-sm shadow-sm" 
                 priority
               />
               <span className="ml-2 text-lg font-semibold text-gray-900 flex flex-col">
-                Kohinoor Enterprises
-                <span className="text-[0.65rem] font-bold">(The Solar Hub)</span>
+                {COMPANY.name}
+                <span className="text-[0.65rem] font-bold">{COMPANY.tagline}</span>
               </span>
             </div>
             {/* Mobile Logo - Larger for better visibility */}
             <div className="md:hidden flex items-center">
               <Image 
                 src="/images/mainlogo.jpg" 
-                alt="Kohinoor Enterprises Logo" 
+                alt={`${COMPANY.name} Logo`} 
                 width={36}
                 height={36}
                 className="h-9 w-auto rounded-sm shadow-sm" 
                 priority
               />
               <span className="ml-2 text-base font-semibold text-gray-900 flex flex-col">
-                Kohinoor Enterprises
-                <span className="text-[0.65rem] font-bold">(The Solar Hub)</span>
+                {COMPANY.name}
+                <span className="text-[0.65rem] font-bold">{COMPANY.tagline}</span>
               </span>
             </div>
           </Link>
@@ -57,8 +58,8 @@ export default function SiteHeader() {
             size="sm"
             className="border-gray-200 text-gray-900 hover:bg-green-700 hover:text-white"
           >
-            <Link href="tel:+919985690350">
-              <Phone className="mr-2 h-4 w-4" /> +91 99856 90350
+            <Link href={`tel:${COMPANY.phone}`}>
+              <Phone className="mr-2 h-4 w-4" /> {COMPANY.phone}
             </Link>
           </Button>
           <Button asChild size="sm" className="bg-green-700 hover:bg-green-800 text-white">
@@ -78,15 +79,15 @@ export default function SiteHeader() {
 
                 <Image 
                   src="/images/mainlogo.jpg" 
-                  alt="Kohinoor Enterprises Logo" 
+                  alt={`${COMPANY.name} Logo`} 
                   width={32}
                   height={32}
                   className="h-8 w-auto rounded-sm shadow-sm" 
                   priority
                 />
                 <span className="text-base font-semibold text-gray-900 flex flex-col">
-                  Kohinoor Solar
-                  <span className="text-[0.65rem] font-bold">(The Solar Hub)</span>
+                  {COMPANY.name}
+                  <span className="text-[0.65rem] font-bold">{COMPANY.tagline}</span>
                 </span>
               </SheetTitle>
             </SheetHeader>
@@ -101,8 +102,8 @@ export default function SiteHeader() {
                 size="sm"
                 className="border-gray-200 text-gray-900 hover:bg-green-700 hover:text-white"
               >
-                <Link href="tel:+919985690350">
-                  <Phone className="mr-2 h-4 w-4" /> +91 99856 90350
+                <Link href={`tel:${COMPANY.phone}`}>
+                  <Phone className="mr-2 h-4 w-4" /> {COMPANY.phone}
                 </Link>
               </Button>
               <Button asChild size="sm" className="bg-green-700 hover:bg-green-800 text-white">
@@ -119,18 +120,9 @@ export default function SiteHeader() {
 function NavLinks({ className, isMobile = false }: { className?: string; isMobile?: boolean }) {
   const pathname = usePathname()
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-  ] as const
-
   return (
     <div className={className}>
-      {links.map((link) => {
+      {NAV_LINKS.map((link) => {
         const isActive = pathname === link.href
 
         return isMobile ? (

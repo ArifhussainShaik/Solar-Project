@@ -12,6 +12,7 @@ import { Slider } from "@/components/ui/slider"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import Link from "next/link"
+import { SOLAR_CALC } from "@/lib/constants"
 
 interface SolarCalculatorProps {
   location?: string
@@ -32,44 +33,29 @@ export default function SolarCalculator({ location = "Andhra Pradesh" }: SolarCa
   const [co2Reduction, setCo2Reduction] = useState(0)
 
   const handleCalculate = () => {
-    // This is a simplified calculation for demonstration purposes
-    // In a real implementation, these would be more sophisticated calculations
-
-    // Estimate system size based on monthly bill (rough estimate)
-    const avgKwhPerMonth = monthlyBill / 8 // Assuming ₹8 per kWh
-    const estimatedSystemSizeKw = avgKwhPerMonth / 120 // Assuming 120 kWh per month per kW of solar
-
-    // Take the smaller of the two
+    // Estimate system size based on monthly bill
+    const avgKwhPerMonth = monthlyBill / SOLAR_CALC.avgKwhPerRupee
+    const estimatedSystemSizeKw = avgKwhPerMonth / SOLAR_CALC.avgKwhPerMonthPerKw
     const recommendedSizeKw = estimatedSystemSizeKw
 
-    // Cost calculation (rough estimate)
-    let costPerWatt = 60 // ₹60 per watt for grid-tied
-    if (systemType === "off-grid") {
-      costPerWatt = 90 // ₹90 per watt for off-grid with batteries
-    } else if (systemType === "hybrid") {
-      costPerWatt = 75 // ₹75 per watt for hybrid
-    }
+    // Cost calculation using constants
+    const costPerWatt = SOLAR_CALC.costPerWatt[systemType as keyof typeof SOLAR_CALC.costPerWatt] || SOLAR_CALC.costPerWatt.gridTied
 
     // Location-based adjustments
-    let locationMultiplier = 1.0
-    if (selectedLocation === "Nandyal") {
-      locationMultiplier = 1.05 // 5% better performance in Nandyal
-    } else if (selectedLocation === "Kurnool") {
-      locationMultiplier = 1.03 // 3% better performance in Kurnool
-    }
+    const locationMultiplier = SOLAR_CALC.locationMultipliers[selectedLocation as keyof typeof SOLAR_CALC.locationMultipliers] || 1.0
 
     const totalCost = recommendedSizeKw * 1000 * costPerWatt
 
     // Savings calculation with location adjustment
-    const monthlyKwhGeneration = recommendedSizeKw * 120 * locationMultiplier // Assuming 120 kWh per month per kW
-    const monthlySavingsAmount = monthlyKwhGeneration * 8 // Assuming ₹8 per kWh
+    const monthlyKwhGeneration = recommendedSizeKw * SOLAR_CALC.avgKwhPerMonthPerKw * locationMultiplier
+    const monthlySavingsAmount = monthlyKwhGeneration * SOLAR_CALC.avgKwhPerRupee
     const annualSavingsAmount = monthlySavingsAmount * 12
 
     // Payback period
     const paybackYears = totalCost / annualSavingsAmount
 
-    // CO2 reduction (rough estimate)
-    const co2ReductionKg = monthlyKwhGeneration * 0.82 * 12 // 0.82 kg CO2 per kWh
+    // CO2 reduction
+    const co2ReductionKg = monthlyKwhGeneration * SOLAR_CALC.co2ReductionPerKwh * 12
 
     // Update state with calculated values
     setRecommendedSize(Number.parseFloat(recommendedSizeKw.toFixed(2)))
@@ -230,7 +216,7 @@ export default function SolarCalculator({ location = "Andhra Pradesh" }: SolarCa
             </div>
             <div className="mt-6">
               <Button asChild className="w-full bg-green-700 hover:bg-green-800">
-                <Link href="/contact?source=calculator&system_size=${recommendedSize}&estimated_cost=${estimatedCost}">
+                <Link href={`/contact?source=calculator&system_size=${recommendedSize}&estimated_cost=${estimatedCost}`}>
                   Get Detailed Quote
                 </Link>
               </Button>
