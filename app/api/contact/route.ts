@@ -46,7 +46,9 @@ function sanitizeInput(input: string): string {
 export async function POST(request: NextRequest) {
   try {
     // Get client IP for rate limiting
-    const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
+    const forwardedFor = request.headers.get('x-forwarded-for');
+    const realIp = request.headers.get('x-real-ip');
+    const ip = (forwardedFor ? forwardedFor.split(',')[0] : realIp) || '127.0.0.1';
     
     // Check rate limit
     if (!checkRateLimit(ip)) {

@@ -10,7 +10,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true,
   },
   async headers() {
     return [

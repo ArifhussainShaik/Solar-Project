@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Calendar, Clock, Facebook, Linkedin, Twitter } from "lucide-react"
@@ -373,13 +374,23 @@ const blogPosts = {
   },
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return Object.keys(blogPosts).map((slug) => ({ slug }))
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params
-  const post = blogPosts[slug as keyof typeof blogPosts]
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts[slug as keyof typeof blogPosts];
+  
+  return {
+    title: post?.title || 'Blog Post',
+    description: post?.content.substring(0, 160) || 'Kohinoor Solar blog post'
+  };
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogPosts[slug as keyof typeof blogPosts];
 
   if (!post) {
     return (
@@ -390,7 +401,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <Link href="/blog">Back to Blog</Link>
         </Button>
       </div>
-    )
+    );
   }
 
   return (
@@ -519,5 +530,5 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* WhatsApp Button */}
       <WhatsAppButton phoneNumber="919985690350" />
     </div>
-  )
+  );
 }
